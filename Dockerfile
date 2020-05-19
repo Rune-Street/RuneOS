@@ -9,7 +9,8 @@ RUN apt-get update && \
     add-apt-repository -y ppa:apt-fast/stable && add-apt-repository -y ppa:openjdk-r/ppa && add-apt-repository -y https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ && \
     apt-get update && apt-get install -y apt-fast && \
     apt-fast install -y --no-install-recommends lxde apt-utils xvfb x11vnc adoptopenjdk-14-openj9-jre && \
-    apt-fast install -y scrot python3-tk python3-dev python3-pip python3-setuptools && \
+    apt-fast install -y scrot python3-tk python3.8 python3-setuptools python3-pip && \
+    python3.8 -m pip install ptpython==3.0.2 PyAutoGUI==0.9.50 pynput==1.6.8 && \
     sed -i '$ d' /root/.profile && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
